@@ -1,6 +1,6 @@
 import random
 
-datData = [1,3,25,18,54,2,77,16,18,19,20,32,10,43,33,46,100,165,1024,566,343,23,45]
+#datData = [1,3,25,18,54,2,77,16,18,19,20,32,10,43,33,46,100,165,1024,566,343,23,45]
 
 def generateNums():
 	global f
@@ -14,16 +14,16 @@ def generateNums():
 	return f
 	f.close()
 
-def bubbleSort(datData):
+def bubbleSort(f2):
 	global isSorted
 	isSorted = True
 	while isSorted:
 		isSorted = False
-	#f2 = open("numbers.txt", 'r')
-	#datData = []
-	#for x in f2:
-		#datData.append(x)
-		#print datData
+		with open("numbers.txt") as f2:
+			lines = f2.readlines()
+			print lines
+		
+		'''
 		for i in range(len(datData)-1):
 			if datData[i] >  datData[i+1]:
 				#swap!
@@ -32,8 +32,8 @@ def bubbleSort(datData):
 				print datData
 				isSorted = True
 	return None
-
+	'''
 def main():
-	#generateNums()
-	isSorted = bubbleSort(datData)
+	generateNums()
+	isSorted = bubbleSort(f)
 main()
