@@ -9,19 +9,25 @@ def generateNums():
 	for i in random.sample(range(500),500):
 		nums.append(i)
 	f.write('%s' % nums)
+
 	#print nums
 	return f
+	#f.close()
 
-def bubbleSort(datData):
+def bubbleSort(f2):
 	global isSorted
 	isSorted = False
-	datData = open("numbers.txt", 'w+')
-	for i in datData:
+	f2 = open("numbers.txt", 'r')
+	datData = []
+	for x in f2:
+		datData.append(x)
+		print datData
+	for i in range(len(datData)-1):
 		if datData[i] >  datData[i+1]:
 			#swap!
 			datData[i], datData[i+1] = datData[i+1], datData[i]
-			i=0
-			datData = datData.write('bubbleSorted.txt', 'w')
+			#i=0
+			print datData
 			
 		else: 
 			isSorted = True
