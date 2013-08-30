@@ -26,9 +26,9 @@ def bubbleSort():
 			lines = []
 			for x in f.readline():
 				try: lines.append(int(x))
-				pass
+					pass
 				except ValueError, e:
-					raise
+					pass
 				print a
 				
 				#lines = map(int, str(x))
