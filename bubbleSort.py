@@ -20,8 +20,11 @@ def bubbleSort():
 	while isSorted:
 		isSorted = False
 		with open("numbers.txt", 'r') as f:
-			li = map(int, string.split(f.readline()))
-			print li
+			lines = " "
+			for x in f.readlines():
+				print x
+				lines = map(int, str(x))
+			print lines
 			'''
 			for i in range(len(lines)-1):
 				if lines[i] >  lines[i+1]:
@@ -31,7 +34,7 @@ def bubbleSort():
 					print lines
 					isSorted = True
 	return None
-'''
+	'''
 def main():
 	generateNums()
 	isSorted = bubbleSort()
