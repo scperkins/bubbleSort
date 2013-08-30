@@ -7,7 +7,7 @@ def generateNums():
 
 	f = open("numbers.txt", 'w')
 	#nums = []
-	for i in random.sample(range(500),500):
+	for i in random.sample(range(50),50):
 		print i
 		f.write('%s,' % i)
 	#print nums
@@ -16,6 +16,7 @@ def generateNums():
 
 def readFromFile():
 		with open("numbers.txt", 'r') as f:
+			global lines
 			lines = []
 			for x in f.readline():
 				try: 
@@ -23,7 +24,7 @@ def readFromFile():
 					pass
 				except ValueError, e:
 					pass
-				print lines
+		print lines
 
 		return lines
 
@@ -43,5 +44,6 @@ def bubbleSort(lines):
 
 def main():
 	generateNums()
-	#isSorted = bubbleSort(lines)
+	readFromFile()
+	isSorted = bubbleSort(lines)
 main()
