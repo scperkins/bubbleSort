@@ -7,9 +7,9 @@ def generateNums():
 
 	f = open("numbers.txt", 'w')
 	#nums = []
-	for i in random.sample(range(50),50):
-		print i
-		f.write('%s,' % i)
+	for i in random.sample(range(500),500):
+		#print i
+		f.write('%d,' % i)
 	#print nums
 	#return f
 	f.close()
@@ -18,12 +18,14 @@ def readFromFile():
 		with open("numbers.txt", 'r') as f:
 			global lines
 			lines = []
-			for x in f.readline():
+			for x in f.readline().split(','):
 				try: 
 					lines.append(int(x))
+					#print int(x)
 					pass
 				except ValueError, e:
 					pass
+
 		print lines
 
 		return lines
