@@ -14,12 +14,8 @@ def generateNums():
 	#return f
 	f.close()
 
-def writeToFile():
-
+def readFromFile():
 		with open("numbers.txt", 'r') as f:
-			#lines = f.readline()
-			#lines.split(',')
-			#line = map(int lines.split(,))	
 			lines = []
 			for x in f.readline():
 				try: 
@@ -28,6 +24,8 @@ def writeToFile():
 				except ValueError, e:
 					pass
 				print lines
+
+		return lines
 
 def bubbleSort():
 	global isSorted
