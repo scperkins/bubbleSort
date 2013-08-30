@@ -27,21 +27,21 @@ def readFromFile():
 
 		return lines
 
-def bubbleSort():
+def bubbleSort(lines):
 	global isSorted
 	isSorted = True
 	while isSorted:
 		isSorted = False
-			for i in range(len(lines)-1):
-				if lines[i] >  lines[i+1]:
-					#swap!
-					lines[i], lines[i+1] = lines[i+1], lines[i]
-					#i=0
-					print lines
-					isSorted = True
+		for i in range(len(lines)-1):
+			if lines[i] >  lines[i+1]:
+				#swap!
+				lines[i], lines[i+1] = lines[i+1], lines[i]
+				#i=0
+				print lines
+				isSorted = True
 	return None
 
 def main():
 	generateNums()
-	#isSorted = bubbleSort()
+	#isSorted = bubbleSort(lines)
 main()
