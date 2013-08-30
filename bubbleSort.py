@@ -6,11 +6,13 @@ and writes the list to a file called numbers.txt'''
 
 def generateNums():
 
+	prompt = input("Enter the size of your array as an integer: ")
 	f = open("numbers.txt", 'w')
-	for i in random.sample(range(50),50):
+	for i in random.sample(range(prompt),prompt):
 		f.write('%d,' % i)
 	
 	f.close()
+	return prompt
 
 '''Reads from numbers.txt, with correct formatting and converts back to integers, finally
 appending the original random ints to a list. Returns the list 'lines'. '''
