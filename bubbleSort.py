@@ -1,11 +1,12 @@
 import random
+import time
 import string #not necessary but might use later
 
 '''Generates a list with 50 indexes, populated with random numbers from 0 to 49 
 and writes the list to a file called numbers.txt'''
 
 def generateNums():
-
+	global prompt
 	prompt = input("Enter the size of your array as an integer: ")
 	f = open("numbers.txt", 'w')
 	for i in random.sample(range(prompt),prompt):
@@ -56,6 +57,8 @@ def writeFile(lines):
 def main():
 	generateNums()
 	readFromFile()
+	startTime = time.time()
 	isSorted = bubbleSort(lines)
+	print " \nIt took", time.time()-startTime, "seconds to sort an array with", prompt, "indexes."
 	writeFile(lines)
 main()
