@@ -1,18 +1,19 @@
 import random
-import string
+import string #not necessary but might use later
 
-#datData = [1,3,25,18,54,2,77,16,18,19,20,32,10,43,33,46,100,165,1024,566,343,23,45]
+'''Generates a list with 50 indexes, populated with random numbers from 0 to 49 
+and writes the list to a file called numbers.txt'''
 
 def generateNums():
 
 	f = open("numbers.txt", 'w')
-	#nums = []
 	for i in random.sample(range(50),50):
-		#print i
 		f.write('%d,' % i)
-	#print nums
-	#return f
+	
 	f.close()
+
+'''Reads from numbers.txt, with correct formatting and converts back to integers, finally
+appending the original random ints to a list. Returns the list 'lines'. '''
 
 def readFromFile():
 		with open("numbers.txt", 'r') as f:
@@ -21,7 +22,6 @@ def readFromFile():
 			for x in f.readline().split(','):
 				try: 
 					lines.append(int(x))
-					#print int(x)
 					pass
 				except ValueError, e:
 					pass
@@ -29,6 +29,9 @@ def readFromFile():
 		print lines
 
 		return lines
+
+'''The bubble sort algorithm, takes the list from readFromFile as the only parameter, sorts it and Returns
+the sorted list. '''
 
 def bubbleSort(lines):
 	global isSorted
@@ -39,11 +42,11 @@ def bubbleSort(lines):
 			if lines[i] >  lines[i+1]:
 				#swap!
 				lines[i], lines[i+1] = lines[i+1], lines[i]
-				#i=0
 				print lines
 				isSorted = True
 	return lines
 
+'''Takes the sorted list as its parameter and writes it to a new file called bubbleSorted.txt '''
 def writeFile(lines):
 	f = open("bubbleSorted.txt", 'w')
 	f.write('%s,' %lines)
